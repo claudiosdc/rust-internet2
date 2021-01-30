@@ -40,9 +40,9 @@ amplify_derive = "2.4.3"
 strict_encoding = { version = "1", default-features = false, features = ["derive"] }
 inet2_addr = { version = "0.4", features = ["strict_encoding", "stringly_conversions"] }
 inet2_derive = { version = "0.3", default-features = false, optional = true }
-lnpbp = { version = "0.3", default-features = false, optional = true }
-rgb-core = { version = "0.3", optional = true }
-descriptor-wallet = { version = "0.3", default-features = false, optional = true }
+lnpbp = { git = "https://github.com/claudiosdc/rust-lnpbp.git", branch = "v0.3.0_desc_wallet_fix", default-features = false, optional = true }
+rgb-core = { git = "https://github.com/claudiosdc/rgb-core.git", branch = "v0.3.0_desc_wallet_fix", optional = true }
+descriptor-wallet = { git = "https://github.com/claudiosdc/descriptor-wallet.git", branch = "v0.3.5_descriptor_fix", default-features = false, optional = true }
 # Dependencies on core rust-bitcoin ecosystem projects
 # ----------------------------------------------------
 bitcoin = { version = "0.26", default-features = false, features = ["rand"] }

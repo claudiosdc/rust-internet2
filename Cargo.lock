@@ -439,6 +439,23 @@ dependencies = [
 ]
 
 [[package]]
+name = "descriptor-wallet"
+version = "0.3.5"
+source = "git+https://github.com/claudiosdc/descriptor-wallet.git?branch=v0.3.5_descriptor_fix#d09a97c0182d62e121468686d52bd6741796704a"
+dependencies = [
+ "amplify",
+ "amplify_derive",
+ "bitcoin",
+ "lazy_static",
+ "lightning_encoding",
+ "miniscript",
+ "regex",
+ "serde 1.0.120",
+ "serde_with",
+ "strict_encoding",
+]
+
+[[package]]
 name = "digest"
 version = "0.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -746,13 +763,13 @@ dependencies = [
  "amplify_derive",
  "bitcoin",
  "chacha20poly1305",
- "descriptor-wallet",
+ "descriptor-wallet 0.3.5",
  "inet2_addr 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "inet2_derive 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static",
- "lnpbp",
+ "lnpbp 0.3.0 (git+https://github.com/claudiosdc/rust-lnpbp.git?branch=v0.3.0_desc_wallet_fix)",
  "openssl",
- "rgb-core",
+ "rgb-core 0.3.0 (git+https://github.com/claudiosdc/rgb-core.git?branch=v0.3.0_desc_wallet_fix)",
  "serde 1.0.120",
  "serde_with",
  "serde_with_macros",
@@ -773,12 +790,12 @@ dependencies = [
  "amplify_derive",
  "bitcoin",
  "chacha20poly1305",
- "descriptor-wallet",
+ "descriptor-wallet 0.3.3",
  "inet2_addr 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "inet2_derive 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static",
- "lnpbp",
- "rgb-core",
+ "lnpbp 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rgb-core 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.120",
  "serde_with",
  "serde_with_macros",
@@ -825,6 +842,31 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "89203f3fba0a3795506acaad8ebce3c80c0af93f994d5a1d7a0b1eeb23271929"
 
 [[package]]
+name = "lightning_encoding"
+version = "0.3.11"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bff5b60ba947fb0194cb076a29968418d7b70af01781eb9973371a0efe6d3871"
+dependencies = [
+ "amplify",
+ "amplify_derive",
+ "bitcoin",
+ "lightning_encoding_derive",
+ "strict_encoding",
+]
+
+[[package]]
+name = "lightning_encoding_derive"
+version = "0.3.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f9c4b7e9c19325a2f965023c96621c4f6c921ec6d05433911e1a640bf71eff40"
+dependencies = [
+ "amplify",
+ "proc-macro2 1.0.24",
+ "quote 1.0.8",
+ "syn 1.0.58",
+]
+
+[[package]]
 name = "linked-hash-map"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -849,10 +891,10 @@ dependencies = [
  "amplify",
  "amplify_derive",
  "bitcoin",
- "descriptor-wallet",
+ "descriptor-wallet 0.3.3",
  "internet2 0.3.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static",
- "lnpbp",
+ "lnpbp 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.120",
  "serde_with",
  "strict_encoding",
@@ -869,7 +911,27 @@ dependencies = [
  "bitcoin",
  "bitcoin_hashes",
  "client_side_validation",
- "descriptor-wallet",
+ "descriptor-wallet 0.3.3",
+ "lazy_static",
+ "miniscript",
+ "serde 1.0.120",
+ "serde_with",
+ "serde_with_macros",
+ "strict_encoding",
+ "strict_encoding_derive",
+]
+
+[[package]]
+name = "lnpbp"
+version = "0.3.0"
+source = "git+https://github.com/claudiosdc/rust-lnpbp.git?branch=v0.3.0_desc_wallet_fix#acb2dd6c52efad095d13b2a9817083c007d53d87"
+dependencies = [
+ "amplify",
+ "amplify_derive",
+ "bitcoin",
+ "bitcoin_hashes",
+ "client_side_validation",
+ "descriptor-wallet 0.3.5",
  "lazy_static",
  "miniscript",
  "serde 1.0.120",
@@ -1369,12 +1431,40 @@ dependencies = [
  "bitcoin_hashes",
  "chrono",
  "deflate",
- "descriptor-wallet",
+ "descriptor-wallet 0.3.3",
  "ed25519-dalek",
  "grin_secp256k1zkp",
  "inflate",
  "lazy_static",
- "lnpbp",
+ "lnpbp 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "miniscript",
+ "num-derive",
+ "num-traits 0.2.14",
+ "regex",
+ "serde 1.0.120",
+ "serde_with",
+ "serde_with_macros",
+ "strict_encoding",
+]
+
+[[package]]
+name = "rgb-core"
+version = "0.3.0"
+source = "git+https://github.com/claudiosdc/rgb-core.git?branch=v0.3.0_desc_wallet_fix#6bea74bb8c2fe4831f6853da67771710078987f2"
+dependencies = [
+ "amplify",
+ "amplify_derive",
+ "bech32",
+ "bitcoin",
+ "bitcoin_hashes",
+ "chrono",
+ "deflate",
+ "descriptor-wallet 0.3.5",
+ "ed25519-dalek",
+ "grin_secp256k1zkp",
+ "inflate",
+ "lazy_static",
+ "lnpbp 0.3.0 (git+https://github.com/claudiosdc/rust-lnpbp.git?branch=v0.3.0_desc_wallet_fix)",
  "miniscript",
  "num-derive",
  "num-traits 0.2.14",
